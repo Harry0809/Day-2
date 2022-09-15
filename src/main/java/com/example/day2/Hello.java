@@ -33,6 +33,13 @@ public class Hello {
         return "hello" + user.getFirstName()+ " " + user.getLastName();
     }
 
+    //UC5_PutMapping
+
+    @PutMapping("/put/{firstName}")
+    public String hello(@PathVariable String firstName, @RequestParam(value = "lastName") String lastName){
+        return "hello" + firstName + " " + lastName + " ";
+    }
+
 
 }
 
