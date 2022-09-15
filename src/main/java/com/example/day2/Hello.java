@@ -1,9 +1,6 @@
 package com.example.day2;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class Hello {
@@ -27,6 +24,13 @@ public class Hello {
     @GetMapping(value="/param/{name}")
     public String helloParam(@PathVariable String name){
         return "hello" + name;
+    }
+
+    //UC4_PostMethod
+
+    @PostMapping("/post")
+    public String hello(@RequestBody User user){
+        return "hello" + user.getFirstName()+ " " + user.getLastName();
     }
 
 
