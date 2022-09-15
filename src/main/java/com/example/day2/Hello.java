@@ -1,6 +1,7 @@
 package com.example.day2;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,12 +15,21 @@ public class Hello {
         return "Hello From Bridgelabz";
     }
 
-    //UC2_QueryParametr
+    //UC2_UsingQuery
 
     @GetMapping(value="/query")
     public String hello(@RequestParam (value="name") String name){
         return "hello" + name;
     }
+
+    //Uc3_UsingParameter
+
+    @GetMapping(value="/param/{name}")
+    public String helloParam(@PathVariable String name){
+        return "hello" + name;
+    }
+
+
 }
 
 
